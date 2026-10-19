@@ -1,0 +1,10 @@
+# Relative paths resolve from the directory you run `snakemake` from (repo root).
+data_dir: data
+output_dir: derivatives/snakemake
+
+subject:
+- '01'
+- '02'
+- '03'
+
+bet_fractional_intensity: 0.5

@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.snakemake/
+
+# Downloaded by scripts/fetch_data.py
+data/
+
+# Runner scratch space and pipeline outputs
+work/
+derivatives/
+styx_tmp/

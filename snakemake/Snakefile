@@ -1,0 +1,60 @@
+"""NiWrap + Snakemake example workflow.
+
+This Snakefile runs a minimal neuroimaging pipeline using NiWrap-wrapped FSL
+and ANTs tools. Paths are read from ``config.yaml`` in the same directory as
+this file. Tool execution is delegated to Python scripts under ``scripts/``.
+"""
+
+from pathlib import Path
+
+
+configfile: Path(workflow.basedir) / "config.yaml"
+
+
+# --- Setup ---
+TEMPLATE = "MNI152NLin2009cAsym"
+
+# Input directory containing the BIDS dataset and templateflow directory.
+if (data_dir := config.get("data_dir")) is None:
+    raise ValueError("No input directory provided")
+data_dir = Path(data_dir)
+bids_dir = data_dir / "ds000001"
+tpl_dir = data_dir / "templateflow"
+
+# Output directory where preprocess/ and registration/ results are written.
+if (output_dir := config.get("output_dir")) is None:
+    raise ValueError("No output directory provided")
+output_dir = Path(output_dir)
+
+
+# --- Target Rule (Must be first) ---
+rule all:
+    """Collect the final registered images for all subjects."""
+    input:
+        expand(
+            f"{output_dir}/registration/sub-{{subject}}_space-{TEMPLATE}_desc-preproc_T1w.nii.gz",
+            subject=config["subject"],
+        ),
+
+
+rule anatomical_preprocess:
+    """Skull-strip and bias-field correct a subject's T1w image."""
+    input:
+        t1w=f"{bids_dir}/sub-{{subject}}/anat/sub-{{subject}}_T1w.nii.gz",
+    output:
+        preproc_t1w=f"{output_dir}/preprocess/sub-{{subject}}_desc-preproc_T1w.nii.gz",
+    params:
+        bet_fractional_intensity=config.get("bet_fractional_intensity"),
+    script:
+        "scripts/preprocess.py"
+
+
+rule registration_to_template:
+    """Register the preprocessed T1w image to the template space."""
+    input:
+        preproc_t1w=rules.anatomical_preprocess.output.preproc_t1w,
+        template_t1w=f"{tpl_dir}/tpl-{TEMPLATE}/tpl-{TEMPLATE}_res-01_T1w.nii.gz",
+    output:
+        xfm_t1w=f"{output_dir}/registration/sub-{{subject}}_space-{TEMPLATE}_desc-preproc_T1w.nii.gz",
+    script:
+        "scripts/register.py"
