@@ -10,3 +10,6 @@ data/
 work/
 derivatives/
 styx_tmp/
+
+# Marp HTML export (images resolve relative to slides/)
+slides/workshop.html

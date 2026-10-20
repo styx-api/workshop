@@ -2,7 +2,7 @@
 
 A 90-minute hands-on workshop on using [NiWrap](https://github.com/styx-api/niwrap), the Styx-generated Python wrappers for FSL, ANTs, AFNI, FreeSurfer, MRtrix3 and other neuroimaging tools. Audience: researchers with basic Python.
 
-- Attendees: [`SETUP.md`](SETUP.md), before the day.
+- Attendees: [`SETUP.md`](SETUP.md), before the day. Get the materials with `git clone https://github.com/styx-api/workshop.git niwrap-workshop` or as a [ZIP](https://github.com/styx-api/workshop/archive/refs/heads/main.zip).
 - Facilitators: [`FACILITATOR.md`](FACILITATOR.md) for timing, failure points, the no-Docker fallback and demo commands.
 
 ## Contents
@@ -53,7 +53,7 @@ The RBC demo runs separately through `uvx` at `childmindresearch/rbc@9eaf3ac`, w
 Marp: one Markdown file that renders on GitHub, speaker notes as HTML comments, preview and export (HTML, PDF, PPTX) from VS Code or `npx`, nothing else to install. Quarto's advantage is executing code in slides, which isn't needed here: slide code is copied from the executed notebooks.
 
 ```bash
-npx @marp-team/marp-cli@4.1.2 slides/workshop.md -o workshop.html   # presenter view: press P
+npx @marp-team/marp-cli@4.1.2 slides/workshop.md -o slides/workshop.html   # presenter view: press P
 npx @marp-team/marp-cli@4.1.2 slides/workshop.md --pdf
 npx @marp-team/marp-cli@4.1.2 slides/workshop.md --pptx -o slides/workshop.pptx
 ```
@@ -70,3 +70,18 @@ Code and APIs come from these, checked against the installed packages:
 - [`styx-api/niwrap`](https://github.com/styx-api/niwrap) README: tool coverage numbers on the slides
 
 Where the book and NiWrap 1.1.0 disagree, the material follows the installed version. Differences are listed at the end of `FACILITATOR.md`.
+
+## Figure credits
+
+| `slides/img/` | Source |
+|---|---|
+| `cli_structure.jpg`, `styx_layers.png` | Styx preprint, Figs. 1 and 4 ([doi:10.1101/2025.07.24.666435](https://doi.org/10.1101/2025.07.24.666435), CC-BY) |
+| `before_after.png`, `flower.png` | OHBM 2026 poster "A Collaborative Infrastructure Around Shared Tool Interfaces for Neuroimaging" |
+| `vscode_hover.png` | OHBM 2024 Styx poster |
+| `rbc_pipeline.svg` | [`childmindresearch/rbc`](https://github.com/childmindresearch/rbc) `docs/pipeline_flow.svg` @ `9eaf3ac` |
+| `rbc_harmonization.png` | [reprobrainchart.github.io](https://reprobrainchart.github.io/) site banner |
+| `nipype_logo.svg` | [`nipy/nipype`](https://github.com/nipy/nipype) `doc/_static/snakebrain-nipype.svg` |
+| `snakemake_dag.png` | `snakemake --dag mermaid-js` on `snakemake/Snakefile`, rendered with mermaid-cli |
+| `bet.png`, `fast.png`, `mni_subjects.png`, `rbc.png` | Outputs of the notebooks and the RBC run |
+| `repo_qr.png` | Generated with `segno` |
+| `cmi_logo*.png` | Child Mind Institute PowerPoint template (2023); slide colors and Arial follow the same template |

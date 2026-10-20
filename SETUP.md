@@ -36,10 +36,12 @@ Open a new terminal and check `uv --version`.
 ## 2. Get the materials
 
 ```bash
-git clone <workshop repository URL> niwrap-workshop
+git clone https://github.com/styx-api/workshop.git niwrap-workshop
 cd niwrap-workshop
 uv sync
 ```
+
+No git? Download [the ZIP](https://github.com/styx-api/workshop/archive/refs/heads/main.zip), unpack it, and run `uv sync` inside the folder.
 
 `uv sync` installs Python 3.13 if needed and the pinned packages into `.venv/`. Run all later commands from this folder.
 
