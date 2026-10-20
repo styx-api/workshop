@@ -70,6 +70,8 @@ docker pull --platform linux/amd64 antsx/ants:v2.5.3
 
 An interrupted pull resumes when you run it again.
 
+While it downloads, browse the tools in the [NiWrap Hub](https://niwrap.dev/hub): pick one, set its arguments, and it shows the command and the Python call.
+
 ## 5. Smoke test
 
 ```bash

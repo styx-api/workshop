@@ -23,7 +23,7 @@
 | 0–10 | Why NiWrap | Slides 1–9. Everyone opens `01_first_calls.ipynb` and runs the setup cell meanwhile. | Failed setup cells. Send a helper; anyone not fixed by minute 10 switches to `RUNNER = "dry"`. |
 | 10–25 | First calls | Live-code notebook 01, 2-min autocomplete exercise. The last cell (FAST) takes ~2 min: start it and move to the Runners slides. | VS Code kernel selection. Jupyter autocomplete needs an idle kernel. |
 | 25–35 | Runners | Notebook 02. Open `work/02/<id>_0_bet/run.sh` in the file browser. | |
-| 35–65 | Pipeline | Slides 22–25, then `03_pipeline_starter.ipynb`. Walk the room. Solution slides 26–28 at ~60 min. | Step 0 takes ~2 min. Run sub-01 first; start the loop only after TODO 4. |
+| 35–65 | Pipeline | Slides 23–26, then `03_pipeline_starter.ipynb`. Walk the room. Solution slides 27–29 at ~60 min. | Step 0 takes ~2 min. Run sub-01 first; start the loop only after TODO 4. |
 | 65–75 | Snakemake | Repo-root terminal: `-n`, open `snakemake/Snakefile` and `scripts/preprocess.py`, show pre-computed `derivatives/snakemake/`. | A live `--cores 3` run took 4.5 min on the 16-core desktop; longer on laptops, so have results ready. |
 | 75–83 | RBC | `rbc anatomical --help`, start the command, open `segmentation.py` and `niwrap.py` on GitHub, show pre-computed `derivatives/rbc/`. | Ctrl+C the live run once the first container starts. |
 | 83–90 | Q&A | Last slide; common questions in its notes. | |

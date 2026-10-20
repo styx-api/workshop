@@ -3,6 +3,7 @@
 A 90-minute hands-on workshop on using [NiWrap](https://github.com/styx-api/niwrap), the Styx-generated Python wrappers for FSL, ANTs, AFNI, FreeSurfer, MRtrix3 and other neuroimaging tools. Audience: researchers with basic Python.
 
 - Attendees: [`SETUP.md`](SETUP.md), before the day. Get the materials with `git clone https://github.com/styx-api/workshop.git niwrap-workshop` or as a [ZIP](https://github.com/styx-api/workshop/archive/refs/heads/main.zip).
+- Browse every wrapped tool in the [NiWrap Hub](https://niwrap.dev/hub).
 - Facilitators: [`FACILITATOR.md`](FACILITATOR.md) for timing, failure points, the no-Docker fallback and demo commands.
 
 ## Contents
@@ -83,5 +84,6 @@ Where the book and NiWrap 1.1.0 disagree, the material follows the installed ver
 | `nipype_logo.svg` | [`nipy/nipype`](https://github.com/nipy/nipype) `doc/_static/snakebrain-nipype.svg` |
 | `snakemake_dag.png` | `snakemake --dag mermaid-js` on `snakemake/Snakefile`, rendered with mermaid-cli |
 | `bet.png`, `fast.png`, `mni_subjects.png`, `rbc.png` | Outputs of the notebooks and the RBC run |
+| `hub_bet.png` | Screenshot of the NiWrap Hub, [niwrap.dev/hub](https://niwrap.dev/hub?package=fsl&app=bet) |
 | `repo_qr.png` | Generated with `segno` |
 | `cmi_logo*.png` | Child Mind Institute PowerPoint template (2023); slide colors and Arial follow the same template |

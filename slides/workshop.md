@@ -265,6 +265,22 @@ Jupyter completion needs an idle kernel. VS Code (Pylance) works from the type h
 
 ---
 
+## Or in the browser
+
+![h:425 center](img/hub_bet.png)
+
+[niwrap.dev/hub](https://niwrap.dev/hub): every tool, its arguments, the command and the NiWrap call.
+
+<!--
+Live at niwrap.dev/hub. Deep links work: niwrap.dev/hub?package=fsl&app=bet. Fill in the form and the Python tab gives the same call as on slide 8; the Command tab shows bet sub-01_T1w.nii.gz img_bet -f 0.4 -m. The Share button puts the whole configuration in the URL.
+
+Good for the Try it exercise too: open FAST in the Hub.
+
+The form's "Mask file" is BET's positional output prefix (default img_bet), not the -m mask. -m is "Binary mask flag".
+-->
+
+---
+
 ## Into Python
 
 ```python
@@ -720,7 +736,8 @@ Adding one descriptor makes a tool available on all of these.
 ## Questions
 
 - Materials: [github.com/styx-api/workshop](https://github.com/styx-api/workshop)
-- [niwrap.dev](https://niwrap.dev), and the [Styx book](https://niwrap.dev/styxbook/)
+- All tools: [niwrap.dev/hub](https://niwrap.dev/hub)
+- Docs: [niwrap.dev](https://niwrap.dev), and the [Styx book](https://niwrap.dev/styxbook/)
 - Tool coverage: [github.com/styx-api/niwrap](https://github.com/styx-api/niwrap)
 - Workflow engines: [github.com/styx-api/niwrap-workflow-examples](https://github.com/styx-api/niwrap-workflow-examples)
 - RBC: [github.com/childmindresearch/rbc](https://github.com/childmindresearch/rbc)
